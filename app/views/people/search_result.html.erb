@@ -1,0 +1,10 @@
+<h1>People#search_result</h1>
+
+<%= content_tag(:ul) do %>
+  <% @people.each do |person| %>
+    <%= content_tag :li do %>
+      <%= link_to person.natural_name, person_path(person) %>
+      <%= link_to person.companies.first.name if person.companies.any? %>
+    <% end %>
+  <% end %>
+<% end %>

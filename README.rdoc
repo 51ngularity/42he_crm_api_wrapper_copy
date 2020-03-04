@@ -1,0 +1,18 @@
+# CentralStationCRM API Demo 
+
+This is a API Wrapper written in Ruby on Rails for the CentralStationCRM API. It shows you how you can access and work with the basic entities of the CRM.
+
+## Installation 
+
+- clone the project 
+- run `bundle` to install the gems 
+- go to config/enviroments/development.rb and add your CentralStationCRM Api Key as well as your account name, which you can get in the account settings of your CRM. 
+- OR set them as ENV Variables SITE and APIKEY 
+
+
+## QUICK START
+
+bundle install && APIKEY="xxxxxyyyyyzzzzzzzzzzz" SITE="https://xxxx.centralstationcrm.net/api" bundle exec puma
+
+
+

@@ -1,0 +1,61 @@
+<%= link_to "back", :back %>
+
+<h1><%= @person.first_name %> <%= @person.name %></h1>
+
+<h3>All attributes</h3>
+
+<% @person.attributes.each do |k,v| %>
+  <%= k %>: <%= v.is_a?(Array) ? '[...]' : v %><br/>
+<% end %>
+
+<h3>Nested attributes</h3>
+
+<% if @person.companies.any? %>
+  <h3>Companies</h3>
+  <ul>
+      <% @person.companies.each do |company| %>  
+        <%= content_tag :li, company.name %>
+      <% end %>
+  </ul>
+<% end %>
+
+<% if @person.tags.any? %>
+  <h3>Tags</h3>
+  <%= @person.tags.map(&:name).join(', ') %>
+<% end %>
+
+<% if @person.tasks.any? %>
+  <h3>Tasks</h3>
+  <ul>
+      <% @person.tasks.each do |task| %>  
+        <%= content_tag :li, task.name %>
+      <% end %>
+  </ul>
+<% end %>
+
+<% if @person.addrs.any? %>
+  <h3>Addrs</h3>
+  <%=@person%>
+  <ul>
+      <% @person.addrs.each do |addr| %>  
+        <%= content_tag :li do %>
+          <%= addr.street %>
+          <%= addr.zip %>
+          <%= addr.city %>
+        <% end %>
+      <% end %>
+  </ul>
+<% end %>
+
+<% if @person.activities.any? %>
+  <h3>Activities</h3>
+  <ul>
+      <% @person.activities.each do |activity| %>  
+        <%= content_tag :li do %>
+          <%= activity.created_at.to_date %>
+          <%= activity.name %>
+          <%= activity.verb %>
+        <% end %>
+      <% end %>
+  </ul>
+<% end %>

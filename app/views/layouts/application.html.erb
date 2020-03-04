@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CscrmApiDemo</title>
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <section class='connected_crm'>
+            Connected to: <%= ENV['SITE'] %>, <%= truncate(ENV['APIKEY'], length: 10)  %>
+        </section>
+        <nav>
+            <%= link_to 'People index', people_path() %> | 
+            <%= link_to 'People new', new_person_path() %> | 
+            <%= link_to 'People search', search_people_path() %> | 
+            <%= link_to 'CSCRM API Docu', 'http://42he.com/de/developer/crm', target: '_blank' %>
+        </nav>
+        <section class='content'>
+            <%= yield %>
+        </section>
+        <footer>
+            CentralStationCRM Demo Project by <a href='http://42he.com'>42he</a>.
+        </footer>
+    </body>
+</html>

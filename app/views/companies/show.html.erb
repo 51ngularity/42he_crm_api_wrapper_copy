@@ -1,0 +1,59 @@
+<%= link_to "back", :back %>
+
+<h1><%= @company.name %></h1>
+
+<h3>Übersicht</h3>
+
+<% @company.attributes.each do |k,v| %>
+  <%= k %>: <%= v.is_a?(Array) ? '[...]' : v %><br/>
+<% end %>
+
+<h3>Kontakt</h3>
+<% if @company.addrs.any? %>
+	<% @company.addrs.each do |addr| %>  
+		<h4>Standort <%= addr.city %>:</h4>	
+	  <ul>
+        <%= content_tag :li do %>
+          <%= addr.street + ', ' %>
+          <%= addr.zip %>
+          <%= addr.city %>
+        <% end %>
+	  </ul>
+	<% end %>
+<% end %>
+
+<% if @company.emails.any? %>
+  <h3>emails:</h3>
+  <ul>
+      <% @company.emails.each do |var| %>  
+        <%= content_tag :li, var.name %>
+      <% end %>
+  </ul>
+<% end %>
+
+<% if @company.tels.any? %>
+  <h3>tels:</h3>
+  <ul>
+      <% @company.tels.each do |var| %>  
+        <%= content_tag :li, var.name %>
+      <% end %>
+  </ul>
+<% end %>
+
+<% if @company.homepages.any? %>
+  <h3>homepages:</h3>
+  <ul>
+      <% @company.homepages.each do |var| %>  
+        <%= content_tag :li, var.name %>
+      <% end %>
+  </ul>
+<% end %>
+
+<% if @company.tags.any? %>
+  <h3>Tags</h3>
+  <p>
+  <% @company.tags.each do |tag| %>
+  	"<%= tag.name%>" &nbsp;&nbsp;&nbsp;
+  <% end %>	
+  </p> 	
+<% end %>

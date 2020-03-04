@@ -1,0 +1,44 @@
+<h1>People#new</h1>
+
+<%= form_for(@person) do |f| %>
+
+  <p>
+      <%= f.label :title %><br/>
+      <%= f.text_field :title %>
+  </p>
+
+  <p>
+      <%= f.label :first_name %><br/>
+      <%= f.text_field :first_name %>
+  </p>
+  <p>
+      <%= f.label :name %><br/>
+      <%= f.text_field :name %>
+  </p>
+  <%#= render_nested_fields_collection_for_table(f, :positions, @object.positions) %>
+  <%#= render_nested_fields_collection_for_table(f, :tels, @object.tels) %>
+  <%#= render_nested_fields_collection_for_table(f, :emails, @object.emails) %>
+  <%#= render_nested_fields_collection_for_table(f, :homepages, @object.homepages) %>
+  <%#= render_nested_fields_collection_for_table(f, :addrs, @object.addrs) do %>
+
+  <%#= content_tag(:div, class: "related_addrs", data: {behavior: "related_addrs_sink"}) do %>
+  <%#= related_addr_helper(@object) %>
+  <%# end if @object.addrs.select{|addr| addr.persisted?}.empty? %>
+  <%# end %>
+  <%#= render_nested_fields_collection_for_table(f, :ims, @object.ims) %>
+  <%#= render_nested_fields_collection_for_table(f, :sms, @object.sms) %>
+  <%#= render_nested_fields_collection_for_table(f, :assis, @object.assis) %>
+  <%#= render_nested_fields_collection_for_table(f, :historic_events, @object.historic_events) %>
+
+  <%#= f.collection_select(:user_id, active_users_plus_object_user_helper((f.object and f.object.persisted?) ? f.object.user : nil), :id, :natural_name, 
+  :include_blank => true,
+  :selected => f.object.persisted? ? f.object.user_id : current_user.id) %>
+  <p>
+      <%= f.label :background %><br/>
+      <%= f.text_area :background, {:rows => 5} %>
+  </p>
+
+  <p>
+      <%= f.submit %> or <%= link_to 'abort', people_path %>
+  </p>
+<% end %>

@@ -1,0 +1,58 @@
+<h1>People#index</h1>
+
+<p>
+    Includes: 
+    <%= link_to 'without includes, plain person data', people_path() %> | 
+    <%= link_to 'with selected includes (emails)', people_path(includes: 'selec ted') %> | 
+    <%= link_to 'with all includes', people_path(includes: 'all') %> | 
+    <%= link_to 'with address', people_path(includes: 'name') %>
+</p>
+
+<p>
+    Order: 
+    <%= link_to 'name ASC', people_path(order: 'name ASC') %> | 
+    <%= link_to 'updated_at DESC', people_path(order: 'updated_at-desc') %> | 
+    <%= link_to 'created_at ASC', people_path(order: 'created_at-asc') %> 
+</p>
+
+<%= content_tag(:ul) do %>
+  <% @people.each do |person| %>
+  <%# person.includes(:emails) %>
+    <%#= person["tels"].tels %>
+    <%#= person.inspect %>
+    <%= content_tag :li do %>
+      <%#= link_to person.natural_name, person_path(person) %>
+      <%= link_to person_path(person), person_path(person) %>
+      <% if person.addrs.any? %>
+        <%=person.addrs.first.zip %><%= '  -  ' %>
+      <% end %>
+      <% if person.emails.any? %>
+        <%=person.emails.first.name%>
+      <% end %>
+<!-- 
+      <% if person.respond_to? :emails and person.emails %>
+        <br/>
+        <%=person.addrs.first%>
+        
+        <%= person.emails.first.try(:name) || '-' %>
+        <%#= person.addrs.first.try(:plz) || '-' %>
+        <%#= person.emails || '-' %>
+      <% end %>
+       -->
+<!-- 
+      <% if person.respond_to? :addrs and person.addrs %>
+        <br/>
+        <%#=person%>
+        
+        <%#= person.emails.first.try(:name) || '-' %>
+        <%#= person.addrs.first.try(:plz) || '-' %>
+        <%= person.addrs || '-' %>
+      <% end %>
+ -->
+      <% if params[:includes] == 'all' %>
+        <br/>
+        <%= person.tags.map(&:name).join(',') || '-'%>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

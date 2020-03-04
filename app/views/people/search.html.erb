@@ -1,0 +1,15 @@
+<h1>People#search</h1>
+
+<%= form_tag search_result_people_path do %>
+
+  <p>
+      <%= label_tag :first_name %><br/>
+      <%= text_field_tag :first_name %>
+  </p>
+  <p>
+      <%= label_tag :name %><br/>
+      <%= text_field_tag :name %>
+  </p>
+  <%= submit_tag 'find people' %>
+
+<% end %>

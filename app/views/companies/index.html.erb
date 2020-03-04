@@ -1,0 +1,187 @@
+<h1>Unternehmen</h1>
+
+<%= @x %>
+
+<% if !params[:region_switch]
+	params[:region_switch] = '1'
+end %>
+
+<p>
+	<%= form_tag(companies_path(), method: "get") do %>
+      	Nur Unternehmen anzeigen, die maximal <br/> <%= text_field_tag( :max_distance) %> km (200 km max)
+      	<br/> von PLZ <%= text_field_tag( :zip_of_user) %> entfernt sind. <br/>
+  		<%= submit_tag 'Suche einschränken' %>
+  		<%= hidden_field_tag :order , 'distance_to_user_zip-asc' %>
+  		<%= hidden_field_tag :region_switch , params[:region_switch] %>
+  		<%= hidden_field_tag :distance_switch , '1' %>
+  		<%= hidden_field_tag :date_switch , params[:date_switch] %>
+	<% end %>
+</p>
+
+<p>
+    Weitere Infos hinzufügen: 
+
+    <% if params[:region_switch] == '1' %>
+    	<%= link_to ' X Ort', companies_path(region_switch: '0', 
+    											date_switch: params[:date_switch], 
+												distance_switch: params[:distance_switch], 
+	    										order: params[:order],
+	    										max_distance: params[:max_distance],
+	    										zip_of_user: params[:zip_of_user]  ) %> | 
+	<% else %>
+    	<%= link_to ' + Ort', companies_path(region_switch: '1', 
+    											date_switch: params[:date_switch], 
+												distance_switch: params[:distance_switch], 
+	    										order: params[:order],  
+	    										max_distance: params[:max_distance],
+	    										zip_of_user: params[:zip_of_user]  ) %> | 
+	<% end %>
+	<% if params[:date_switch] == '1' %>
+    	<%= link_to ' X Datum', companies_path(date_switch: '0', 
+												distance_switch: params[:distance_switch], 
+	    										order: params[:order], 
+												region_switch: params[:region_switch],
+	    										max_distance: params[:max_distance],
+	    										zip_of_user: params[:zip_of_user]  ) %> | 
+	<% else %>
+    	<%= link_to ' + Datum', companies_path(date_switch: '1', 
+												distance_switch: params[:distance_switch], 
+	    										order: params[:order], 
+												region_switch: params[:region_switch],
+	    										max_distance: params[:max_distance],
+	    										zip_of_user: params[:zip_of_user]  ) %> | 
+	<% end %>
+
+	<% if params[:max_distance].to_s.length != 0 && params[:zip_of_user].to_s.length != 0 %>
+		<% if params[:distance_switch] == '1' %>
+	    	<%= link_to ' X Entfernung', companies_path(distance_switch: '0', 
+			    										order: params[:order], 
+														region_switch: params[:region_switch],
+														date_switch: params[:date_switch],
+			    										max_distance: params[:max_distance],
+			    										zip_of_user: params[:zip_of_user]  ) %> | 	
+		<% else %>
+	    	<%= link_to ' + Entfernung', companies_path(distance_switch: '1', 
+			    										order: params[:order], 
+														region_switch: params[:region_switch],
+														date_switch: params[:date_switch],
+			    										max_distance: params[:max_distance],
+			    										zip_of_user: params[:zip_of_user]  ) %> | 
+		<% end %>
+	<% end %>
+</p>
+
+<p>
+    Sortieren nach: 
+
+    <% if params[:order] == 'name-asc' %>
+	    <%= link_to 'V Name A-Z', companies_path(order: 'name-desc', 
+												region_switch: params[:region_switch],
+												date_switch: params[:date_switch],
+												distance_switch: params[:distance_switch],
+	    										max_distance: params[:max_distance],
+	    										zip_of_user: params[:zip_of_user]  ) %> | 
+    <% elsif params[:order] == 'name-desc' %>
+    	<%= link_to 'V Name Z-A', companies_path(order: 'name-asc', 
+												region_switch: params[:region_switch],
+												date_switch: params[:date_switch] ,
+												distance_switch: params[:distance_switch],
+	    										max_distance: params[:max_distance],
+	    										zip_of_user: params[:zip_of_user] ) %> | 
+	<% else %>
+    	<%= link_to '> Name', companies_path(order: 'name-asc', 
+												region_switch: params[:region_switch],
+												date_switch: params[:date_switch] ,
+												distance_switch: params[:distance_switch],
+	    										max_distance: params[:max_distance],
+	    										zip_of_user: params[:zip_of_user] ) %> | 
+	<% end %>
+
+	<% if params[:order] == 'created_at-asc' %>
+    	<%= link_to 'V Datum - neueste', companies_path(order: 'created_at-desc', 
+												region_switch: params[:region_switch],
+												date_switch: params[:date_switch] ,
+												distance_switch: params[:distance_switch] ,
+	    										max_distance: params[:max_distance],
+	    										zip_of_user: params[:zip_of_user] ) %> | 
+	<% elsif params[:order] == 'created_at-desc' %>
+    	<%= link_to 'V Datum - älteste', companies_path(order: 'created_at-asc', 
+												region_switch: params[:region_switch],
+												date_switch: params[:date_switch] ,
+												distance_switch: params[:distance_switch] ,
+	    										max_distance: params[:max_distance],
+	    										zip_of_user: params[:zip_of_user] ) %> | 
+    <% else %>
+    	<%= link_to '> Datum', companies_path(order: 'created_at-asc', 
+												region_switch: params[:region_switch],
+												date_switch: params[:date_switch] ,
+												distance_switch: params[:distance_switch],
+	    										max_distance: params[:max_distance],
+	    										zip_of_user: params[:zip_of_user] ) %> | 
+    <% end %>
+
+    <% if params[:max_distance].to_s.length != 0 && params[:zip_of_user].to_s.length != 0 %>
+	    <% if params[:order] == 'distance_to_user_zip-asc' %>
+	    	<%= link_to 'V Entfernung - kleinste', companies_path(order: 'distance_to_user_zip-desc', 
+													region_switch: params[:region_switch],
+													date_switch: params[:date_switch] ,
+													distance_switch: params[:distance_switch] ,
+		    										max_distance: params[:max_distance],
+		    										zip_of_user: params[:zip_of_user] ) %> | 
+		<% elsif params[:order] == 'distance_to_user_zip-desc' %>
+	    	<%= link_to 'V Entfernung - größte', companies_path(order: 'distance_to_user_zip-asc', 
+													region_switch: params[:region_switch],
+													date_switch: params[:date_switch] ,
+													distance_switch: params[:distance_switch] ,
+		    										max_distance: params[:max_distance],
+		    										zip_of_user: params[:zip_of_user] ) %> | 
+	    <% else %>
+	    	<%= link_to '> Entfernung', companies_path(order: 'distance_to_user_zip-asc', 
+													region_switch: params[:region_switch],
+													date_switch: params[:date_switch] ,
+													distance_switch: params[:distance_switch] ,
+		    										max_distance: params[:max_distance],
+		    										zip_of_user: params[:zip_of_user] ) %> | 
+		    <% end %>
+    <% end %>
+</p>
+
+<p><font size="5">
+	<% if params[:max_distance].to_s.length != 0 && params[:zip_of_user].to_s.length != 0 %>
+		Gesucht wird in <%= params[:max_distance] %> km Radius um PLZ <%= params[:zip_of_user] %>:
+	<% end %></font>
+</p>
+
+
+<%= content_tag(:ul) do %>
+  <% @companies.each do |company| %>
+
+	<%# if !company.addrs.first.present? %>
+		<%#= link_to company.addrs, company_path(company) %>
+	<%# end %>
+
+	<% if company.addrs.first.present? %>
+		<% if !(params[:max_distance].to_s.length != 0 && params[:zip_of_user].to_s.length != 0) || (params[:max_distance].to_s.length != 0 && params[:zip_of_user].to_s.length != 0 && company.distance_to_user_zip <= params[:max_distance].to_f )  %> 
+			<%= content_tag :li do %>
+
+		      <%= link_to company.name, company_path(company) %>
+		      <% if params[:region_switch] == '1' %>
+	      		<%= ' ----  ' %>
+		        <%= company.addrs.first.city%>
+		      <% end %>
+
+		      <% if params[:date_switch] == '1' %>
+			  	<%= ' ----  ' + company.created_at.to_date.to_s %>
+		      <% end %>
+
+		      <% if params[:max_distance].to_s.length != 0 && params[:zip_of_user].to_s.length != 0 %>
+			      <% if params[:distance_switch] == '1' %>
+			        <%= ' ----  ' + company.distance_to_user_zip.to_s + ' km' %>
+			      <% end %>
+			  <% end %>
+
+			<% end %>
+		<% end %>		
+    <% end %>
+  <% end %>
+<% end %>
