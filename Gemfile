@@ -35,7 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'will_paginate'
 
-gem 'ruby' '~>2.6.5'
+ruby '2.6.5'
 
 gem "puma"
 
