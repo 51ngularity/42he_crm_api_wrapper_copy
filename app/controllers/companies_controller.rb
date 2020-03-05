@@ -4,7 +4,7 @@ class CompaniesController < ApplicationController
 
 	def index
 
-		if !params[:zip_of_user].to_i.present? || !params[:max_distance].to_f.present? || (params[:zip_of_user].length != 5 && params[:zip_of_user].length != 4) 
+		if !params[:zip_of_user].to_i.present? || !params[:max_distance].to_f.present? || (params[:zip_of_user].to_s.length != 5 && params[:zip_of_user].to_s.length != 4) 
 			params[:max_distance] = ''
 			params[:zip_of_user] = ''
 		elsif params[:max_distance].to_f > 200 
