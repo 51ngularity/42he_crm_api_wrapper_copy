@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 4.2.0'
 gem 'activeresource', require: "active_resource"
-
+gem 'rails_12factor'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 gem 'mysql2', '>= 0.4.4'
@@ -35,6 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'will_paginate'
 
+gem 'ruby' '~>2.6.5'
 
 gem "puma"
 
