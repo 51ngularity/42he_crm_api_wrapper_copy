@@ -46,6 +46,7 @@ gem 'tzinfo-data'
 #, '>= 1.3.6'
 group :production do
 	gem 'pg'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
