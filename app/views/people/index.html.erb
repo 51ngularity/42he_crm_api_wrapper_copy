@@ -10,7 +10,7 @@
 
 <p>
     Order: 
-    <%= link_to 'name ASC', people_path(order: 'name ASC') %> | 
+    <%= link_to 'name ASC', people_path(order: 'name-asc') %> | 
     <%= link_to 'updated_at DESC', people_path(order: 'updated_at-desc') %> | 
     <%= link_to 'created_at ASC', people_path(order: 'created_at-asc') %> 
 </p>
@@ -56,3 +56,5 @@
     <% end %>
   <% end %>
 <% end %>
+
+

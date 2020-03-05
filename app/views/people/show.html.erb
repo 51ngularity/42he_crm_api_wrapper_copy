@@ -2,13 +2,11 @@
 
 <h1><%= @person.first_name %> <%= @person.name %></h1>
 
-<h3>All attributes</h3>
-
 <% @person.attributes.each do |k,v| %>
   <%= k %>: <%= v.is_a?(Array) ? '[...]' : v %><br/>
 <% end %>
 
-<h3>Nested attributes</h3>
+<h2>Nested attributes</h2>
 
 <% if @person.companies.any? %>
   <h3>Companies</h3>

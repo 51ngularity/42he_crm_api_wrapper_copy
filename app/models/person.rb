@@ -10,7 +10,7 @@ class Person < CrmBase
   has_many :tags
   has_many :custom_fields
     
-  PERMITTED_PARAMS = [:first_name, :name, :background, :user_id, :title, 
+  PERMITTED_PARAMS = [:first_name, :name, :background, :user_id, :title,
     :custom_field_attributes => CustomField::PERMITTED_PARAMS,
     :contact_detail_attributes => ContactDetail::PERMITTED_PARAMS,
     :addrs_attributes => Addr::PERMITTED_PARAMS]
