@@ -45,7 +45,7 @@ gem 'tzinfo-data'
 #gem 'sqlite3'
 #, '>= 1.3.6'
 group :production do
-	gem 'pg'
+	gem 'mysql2'
 end
 
 group :development, :test do
