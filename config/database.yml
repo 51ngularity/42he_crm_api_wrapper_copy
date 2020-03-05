@@ -14,13 +14,13 @@ test:
 
 production:
   <<: *default
-  adapter: mysql2
+  adapter: pg
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password: dfwE123(,*
-  host: localhost
-  socket: MySQL
+  #username: root
+  #password: dfwE123(,*
+  #host: localhost
+  #socket: MySQL
   database: crm_production
 
 

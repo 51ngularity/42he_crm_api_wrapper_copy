@@ -45,8 +45,7 @@ gem 'tzinfo-data'
 #gem 'sqlite3'
 #, '>= 1.3.6'
 group :production do
-	gem 'mysql2', '>= 0.4.4'
-end
+	gem 'pg'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
