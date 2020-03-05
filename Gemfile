@@ -42,8 +42,7 @@ gem "puma"
 gem 'tzinfo-data'
 #, platforms: [:mingw, :mswin, :x64_mingw]
 
-#gem 'sqlite3'
-#, '>= 1.3.6'
+
 group :production do
 	gem 'pg'
 end
@@ -59,4 +58,5 @@ group :development, :test do
   gem 'spring'
 
   gem 'mysql2', '>= 0.4.4'
+  gem 'sqlite3', '>= 1.3.6'
 end
