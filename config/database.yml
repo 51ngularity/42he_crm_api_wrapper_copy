@@ -1,19 +1,26 @@
-  #adapter: sqlite3
+# development:
+#  adapter: sqlite3
 #  encoding: utf8
 #  database: db/development.sqlite3
+#  pool: 5
+#  timeout: 5000
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 
-#test:
+# test:
 #  adapter: sqlite3
 #  encoding: utf8
 #  database: db/development.sqlite3_test
+#  pool: 5
+#  timeout: 5000
 
-#production:
+# production:
 #  adapter: sqlite3
- # encoding: utf8
-  #database: db/development.sqlite3_production
+#  encoding: utf8
+#  database: db/development.sqlite3_production
+#  pool: 5
+#  timeout: 5000
 
 default: &default
   adapter: mysql2
@@ -26,4 +33,12 @@ default: &default
 
 development:
   <<: *default
-  database: #testProject_development
+  database: db/development.mysql2
+
+test:
+  <<: *default
+  database: db/development.mysql2_test
+
+production:
+  <<: *default
+  database: db/development.mysql2_production

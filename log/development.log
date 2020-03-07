@@ -31844,3 +31844,410 @@ Processing by CompaniesController#index as HTML
   Parameters: {"date_switch"=>"1", "distance_switch"=>"1", "max_distance"=>"100", "order"=>"name-asc", "region_switch"=>"1", "zip_of_user"=>"50668"}
   Rendered companies/index.html.erb within layouts/application (26.6ms)
 Completed 200 OK in 16136ms (Views: 89.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (6437.8ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(191) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (2335.8ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (67.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+
+Started GET "/companies" for ::1 at 2020-03-07 21:52:58 +0100
+DEPRECATION WARNING: Passing a string to ActiveRecord::Base.establish_connection for a configuration lookup is deprecated, please pass a symbol (:sqlite3) instead. (called from resolve_string_connection at C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activerecord-4.2.11.1/lib/active_record/connection_adapters/connection_specification.rb:225)
+
+ActiveRecord::AdapterNotSpecified ('sqlite3' database is not configured. Available: ["adapter"]):
+  activerecord (4.2.11.1) lib/active_record/connection_adapters/connection_specification.rb:248:in `resolve_symbol_connection'
+  activerecord (4.2.11.1) lib/active_record/connection_adapters/connection_specification.rb:231:in `resolve_string_connection'
+  activerecord (4.2.11.1) lib/active_record/connection_adapters/connection_specification.rb:213:in `resolve_connection'
+  activerecord (4.2.11.1) lib/active_record/connection_adapters/connection_specification.rb:139:in `resolve'
+  activerecord (4.2.11.1) lib/active_record/connection_adapters/connection_specification.rb:151:in `block in resolve_all'
+  activerecord (4.2.11.1) lib/active_record/connection_adapters/connection_specification.rb:150:in `each'
+  activerecord (4.2.11.1) lib/active_record/connection_adapters/connection_specification.rb:150:in `resolve_all'
+  activerecord (4.2.11.1) lib/active_record/connection_handling.rb:69:in `resolve'
+  activerecord (4.2.11.1) lib/active_record/core.rb:46:in `configurations='
+  activerecord (4.2.11.1) lib/active_record/railtie.rb:119:in `block (2 levels) in <class:Railtie>'
+  activesupport (4.2.11.1) lib/active_support/lazy_load_hooks.rb:38:in `instance_eval'
+  activesupport (4.2.11.1) lib/active_support/lazy_load_hooks.rb:38:in `execute_hook'
+  activesupport (4.2.11.1) lib/active_support/lazy_load_hooks.rb:45:in `block in run_load_hooks'
+  activesupport (4.2.11.1) lib/active_support/lazy_load_hooks.rb:44:in `each'
+  activesupport (4.2.11.1) lib/active_support/lazy_load_hooks.rb:44:in `run_load_hooks'
+  activerecord (4.2.11.1) lib/active_record/base.rb:315:in `<module:ActiveRecord>'
+  activerecord (4.2.11.1) lib/active_record/base.rb:26:in `<top (required)>'
+  activesupport (4.2.11.1) lib/active_support/dependencies.rb:274:in `require'
+  activesupport (4.2.11.1) lib/active_support/dependencies.rb:274:in `block in require'
+  activesupport (4.2.11.1) lib/active_support/dependencies.rb:240:in `load_dependency'
+  activesupport (4.2.11.1) lib/active_support/dependencies.rb:274:in `require'
+  activerecord (4.2.11.1) lib/active_record/migration.rb:383:in `connection'
+  activerecord (4.2.11.1) lib/active_record/migration.rb:370:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.11.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.11.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.11.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+  puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+  puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+  puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+  puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+
+
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.7ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (1300.1ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (1501.0ms)
+
+
+Started GET "/companies" for ::1 at 2020-03-07 21:59:15 +0100
+
+ActiveRecord::ConnectionNotEstablished (No connection pool for ActiveRecord::Base):
+  activerecord (4.2.11.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:570:in `retrieve_connection'
+  activerecord (4.2.11.1) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.2.11.1) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.2.11.1) lib/active_record/migration.rb:383:in `connection'
+  activerecord (4.2.11.1) lib/active_record/migration.rb:370:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.11.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.11.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.11.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+  puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+  puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+  puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+  puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+
+
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.6ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (49.9ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (124.8ms)
+
+
+Started GET "/people?order=name+ASC" for ::1 at 2020-03-07 22:01:09 +0100
+
+ActiveRecord::ConnectionNotEstablished (No connection pool for ActiveRecord::Base):
+  activerecord (4.2.11.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:570:in `retrieve_connection'
+  activerecord (4.2.11.1) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.2.11.1) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.2.11.1) lib/active_record/migration.rb:383:in `connection'
+  activerecord (4.2.11.1) lib/active_record/migration.rb:370:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.11.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.11.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.11.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+  puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+  puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+  puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+  puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+
+
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (46.6ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (49.8ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (109.4ms)
+
+
+Started GET "/companies" for ::1 at 2020-03-07 22:05:42 +0100
+
+ActiveRecord::ConnectionNotEstablished (No connection pool for ActiveRecord::Base):
+  activerecord (4.2.11.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:570:in `retrieve_connection'
+  activerecord (4.2.11.1) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.2.11.1) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.2.11.1) lib/active_record/migration.rb:383:in `connection'
+  activerecord (4.2.11.1) lib/active_record/migration.rb:370:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.11.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.11.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.11.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+  puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+  puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+  puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+  puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+
+
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.4ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (49.1ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (107.8ms)
+
+
+Started GET "/companies" for ::1 at 2020-03-07 22:16:16 +0100
+
+ActiveRecord::ConnectionNotEstablished (No connection pool for ActiveRecord::Base):
+  activerecord (4.2.11.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:570:in `retrieve_connection'
+  activerecord (4.2.11.1) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.2.11.1) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.2.11.1) lib/active_record/migration.rb:383:in `connection'
+  activerecord (4.2.11.1) lib/active_record/migration.rb:370:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.11.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.11.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.11.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+  puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+  puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+  puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+  puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+
+
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.7ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (49.8ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (111.8ms)
+
+
+Started GET "/companies" for ::1 at 2020-03-07 22:16:53 +0100
+
+ActiveRecord::NoDatabaseError (Unknown database 'db/development.sqlite3'):
+  activerecord (4.2.11.1) lib/active_record/connection_adapters/mysql2_adapter.rb:23:in `rescue in mysql2_connection'
+  activerecord (4.2.11.1) lib/active_record/connection_adapters/mysql2_adapter.rb:9:in `mysql2_connection'
+  activerecord (4.2.11.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in `new_connection'
+  activerecord (4.2.11.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `checkout_new_connection'
+  activerecord (4.2.11.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in `acquire_connection'
+  activerecord (4.2.11.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in `block in checkout'
+  C:/Ruby26-x64/lib/ruby/2.6.0/monitor.rb:235:in `mon_synchronize'
+  activerecord (4.2.11.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in `checkout'
+  activerecord (4.2.11.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in `block in connection'
+  C:/Ruby26-x64/lib/ruby/2.6.0/monitor.rb:235:in `mon_synchronize'
+  activerecord (4.2.11.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in `connection'
+  activerecord (4.2.11.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:571:in `retrieve_connection'
+  activerecord (4.2.11.1) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.2.11.1) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.2.11.1) lib/active_record/migration.rb:383:in `connection'
+  activerecord (4.2.11.1) lib/active_record/migration.rb:370:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.11.1) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.11.1) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.11.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11.1) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+  puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+  puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+  puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+  puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+
+
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionpack-4.2.11.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.6ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (117.7ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (12.3ms)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (195.4ms)
+  [1m[36m (197.9ms)[0m  [1mCREATE DATABASE `db/development.sqlite3` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (244.0ms)[0m  CREATE DATABASE `db/development.mysql2_test` DEFAULT CHARACTER SET `utf8mb4`
+  [1m[36m (1739.1ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(191) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (3261.2ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36m (0.8ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (349.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('0')
+  [1m[36m (3068.0ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(191) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (2076.8ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36m (36.6ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (115.1ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('0')
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36m (811.7ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(191) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (2052.2ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+
+Started GET "/companies" for ::1 at 2020-03-07 22:24:58 +0100
+Processing by CompaniesController#index as HTML
+  Rendered companies/index.html.erb within layouts/application (28.7ms)
+Completed 200 OK in 2750ms (Views: 616.9ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.8ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/companies" for ::1 at 2020-03-07 22:26:53 +0100
+Processing by CompaniesController#index as HTML
+  Rendered companies/index.html.erb within layouts/application (28.8ms)
+Completed 200 OK in 1567ms (Views: 291.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (1513.4ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(191) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (1589.1ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m

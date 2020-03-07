@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 4.2.0'
 gem 'activeresource', require: "active_resource"
-gem 'rails_12factor'
+
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 
@@ -45,6 +45,7 @@ gem 'tzinfo-data'
 
 group :production do
 	gem 'pg'
+	gem 'rails_12factor'
 end
 
 group :development, :test do
